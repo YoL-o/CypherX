@@ -1,10 +1,4 @@
-require('http').createServer((req, res) => {
-  res.end('CypherX bot is alive!');
-}).listen(process.env.PORT || 3000, () => {
-  console.log(`[CypherX] Keep-alive server running on port ${process.env.PORT || 3000}`);
-});
-
-setInterval(() => {}, 1000 * 60 * 60); // 1hr loop to keep process alive
+setInterval(() => {}, 1000 * 60 * 60); // dummy loop to prevent idle shutdown
 
 process.on('SIGTERM', () => {
   console.log('[CypherX] SIGTERM received — shutting down...');
